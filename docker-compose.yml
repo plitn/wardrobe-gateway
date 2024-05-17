@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  gateway-service:
+    image: golang:latest
+    command: >
+      sh -c "cd /go/src/app/cmd/wardrobe_gateway && go mod download && go run main.go"
+    ports:
+      - "8082:8082"
+    volumes:
+      - .:/go/src/app
+    networks:
+      - shared-network
+networks:
+  shared-network:
+    external: true

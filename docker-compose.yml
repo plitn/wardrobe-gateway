@@ -2,7 +2,7 @@ version: '3'
 
 services:
   gateway-service:
-    image: golang:latest
+    image: mirror.gcr.io/golang:latest
     command: >
       sh -c "cd /go/src/app/cmd/wardrobe_gateway && go mod download && go run main.go"
     ports:
